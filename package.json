@@ -1,0 +1,66 @@
+{
+  "name": "did-auth-jose",
+  "version": "0.1.14",
+  "description": "Authentication library using JOSE and DIDs to form secure end to end messages",
+  "main": "dist/lib/index.js",
+  "scripts": {
+    "precommit": "npm run lint && npm run build:docs && git add docs/api.md",
+    "build": "tsc",
+    "test": "nyc jasmine-ts --config=./tests/jasmine.json",
+    "lint": "tslint --fix --project .",
+    "check-lint": "tslint --project .",
+    "build:docs": "jsdoc2md --files lib/**/*.ts --configure jsdoc2md.json > docs/api.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibct-dev/did-auth-jose.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@decentralized-identity/did-common-typescript": "0.1.19",
+    "ec-key": "0.0.4",
+    "jwk-to-pem": "2.0.0",
+    "node-jose": "1.0.0",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/jasmine": "^2.8.8",
+    "@types/node": "^10.10.1",
+    "@types/uuid": "^3.4.4",
+    "husky": "^0.14.3",
+    "jasmine": "^3.2.0",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^5.0.0",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.9",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "include": [
+      "lib/**"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "html"
+    ]
+  }
+}
