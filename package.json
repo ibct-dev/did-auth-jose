@@ -5,7 +5,8 @@
   "main": "dist/lib/index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-},"scripts": {
+  },
+  "scripts": {
     "precommit": "npm run lint && npm run build:docs && git add docs/api.md",
     "build": "tsc",
     "test": "nyc jasmine-ts --config=./tests/jasmine.json",
