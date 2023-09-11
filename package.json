@@ -3,7 +3,9 @@
   "version": "0.1.14",
   "description": "Authentication library using JOSE and DIDs to form secure end to end messages",
   "main": "dist/lib/index.js",
-  "scripts": {
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+},"scripts": {
     "precommit": "npm run lint && npm run build:docs && git add docs/api.md",
     "build": "tsc",
     "test": "nyc jasmine-ts --config=./tests/jasmine.json",
